@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Weather</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<section class="main">
+			<!-- input bar -->
+			<div class="search-method">
+				<input type="text" placeholder="Search" class="in" />
+				<!-- search icon -->
+				<button>
+					<img src="assets/images/search.svg" alt="search-icon" />
+				</button>
+			</div>
+
+			<!-- <aside class="w-icon"> -->
+			<img class="w-icon" src="assets/images/clouds.png" alt="weather-icon" />
+			<!-- </aside> -->
+
+			<div class="temp-bar">
+				<h1 class="temp">18°C</h1>
+				<h2 class="location">America</h2>
+			</div>
+
+			<div class="h-w-warp">
+				<div class="humi-warp">
+					<div class="h-icon">
+						<img src="assets/images/humidity.png" alt="wind-icon" />
+					</div>
+					<div class="info-warp">
+						<h4 class="humidity-per">54%</h4>
+						<h6 class="humidity">Humidity</h6>
+					</div>
+				</div>
+
+				<div class="wind-warp">
+					<div class="wind-icon">
+						<img src="assets/images/wind.png" alt="wind-icon" />
+					</div>
+					<div class="info-warp">
+						<h4 class="wind-per">14km/h</h4>
+						<h6 class="wind">Wind speed</h6>
+					</div>
+				</div>
+
+				<div class="pre-warp">
+					<div class="pre-icon">
+						<img src="/assets/pressure-svgrepo-com.svg" alt="pressure">
+					</div>
+					<div class="pre-info">
+						<h4 class="per">1454</h4>
+						<h6 class="pressure">Pressure</h6>
+					</div>
+				</div>
+			</div>
+
+			<!-- <aside class="details">
+				<div class="pressure"></div>
+			</aside> -->
+		</section>
+
+		<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+		<script src="script.js" defer></script>
+	</body>
+</html>
