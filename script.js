@@ -102,7 +102,15 @@ searchBtn.addEventListener('click', ()=>{
 search.addEventListener('keypress', (event)=>{
     if(event.key === "Enter" )
     checkWeather(search.value);
-})
+});
+
+// adding an event envent driven for direct jump to the input field
+document.addEventListener('keydown', function(event){
+    if(event.key == '/'){
+        event.preventDefault();
+        input.focus();
+    }
+});
 
 // for slide up animation GSAP
 function slideUpAnime(){
