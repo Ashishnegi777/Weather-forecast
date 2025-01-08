@@ -43,10 +43,14 @@ async function checkWeather(location){
         
         slideUpAnime();
         fadeUpAnime();
+        gradientAnimeOne();
+        slideUpAnime();
     }
     if(data.weather[0].main == 'Mist'){
         weatherIcon.src = 'assets/images/mist.png';
         document.querySelector(".h-w-warp").style.visibility = 'visible';
+        gradientAnimeOne();
+        slideUpAnime();
     }
     else if(data.weather[0].main == 'Clouds'){
         weatherIcon.src = '/assets/images/clouds.png';
@@ -54,6 +58,8 @@ async function checkWeather(location){
       
         slideUpAnime();
         fadeUpAnime();
+        gradientAnimeOne();
+        slideUpAnime();
     }
     else if(data.weather[0].main == 'rain'){
         weatherIcon.src = 'assets/images/rain.png';
@@ -61,6 +67,8 @@ async function checkWeather(location){
         
         slideUpAnime();
         fadeUpAnime();
+        gradientAnimeOne();
+        slideUpAnime();
     }
     else if(data.weather[0].main == 'Drizzle'){
         weatherIcon.src = 'assets/images/drizzle.png';
@@ -71,11 +79,15 @@ async function checkWeather(location){
         document.querySelector(".h-w-warp").style.visibility = 'visible';
         slideUpAnime();
         fadeUpAnime();
+        gradientAnimeOne();
+        slideUpAnime();
     }
     else{
         document.querySelector(".h-w-warp").style.visibility = 'visible';
         slideUpAnime();
         fadeUpAnime();
+        gradientAnimeOne();
+        slideUpAnime();
     }
 }
 
@@ -111,4 +123,45 @@ function fadeUpAnime(){
         ease: "power4.out", 
         stagger: 0.1,
     });
+}
+
+//for gradient animation 
+function gradientAnimeOne(){
+    gsap.from(".main",{
+        duration: 2,
+        background: "linear-gradient(45deg, #caefd7,#f5bfd7,#abc9e9)",
+        yoyo: true,
+        repeat: -1,
+    })
+};
+
+function gradientAnime(){
+    gsap.from(".main",{
+        duration: 2.5,
+        background: "linear-gradient(40deg, #60696b,#858e96)",
+        yoyo: true,
+        repeat: -1,
+        stagger: 2,
+    })
+};
+
+
+function flipUp(){
+    gsap.fromTo(".main",{
+        rotationX: -10,
+        rotationY: -350,
+        rotationZ: 10,
+        scale: 0,
+        opacity: 0.2
+    },
+    {
+        duration: 2.5,
+        rotationX: 0,
+        rotationY: 0,
+        rotationZ: 0,
+        scale: 1,
+        opacity: 1,
+        ease: "power4.out"
+    }
+    )
 }
