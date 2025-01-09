@@ -107,10 +107,10 @@ search.addEventListener('keypress', (event)=>{
     checkWeather(search.value);
 });
 
-// adding an event envent driven for direct jump to the input field
+// adding an regex check if users press any key form a to z it focus on the input field
 document.addEventListener('keydown', function(event){
-    if(event.key == '/'){
-        event.preventDefault();
+    if(/^[a-zA-Z]$/){
+        // event.preventDefault();
         input.focus();
     }
 });
