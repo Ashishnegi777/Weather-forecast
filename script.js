@@ -15,21 +15,18 @@ const pressure = document.querySelector(".per");
 document.addEventListener("onload", flipUp());
 
 async function checkWeather(location){
+
+    try{
     const response = await fetch(apiUrl + location +`&appid=${apikey}`);
     var data = await response.json();// converting the data into JSON format
 
     console.log(data);
     gradientAnime();
 
-    if(data.cod == "404"){
-        temp.textContent = data.message;
-        document.querySelector(".h-w-warp").style.visibility = 'hidden';
-        weatherIcon.src = 'assets/error.svg';
-    }
     
     // for html manipulation
     city.textContent = data.name;
-    temp.textContent = Math.round(data.main.temp) + "°C";// round off the whole value
+    temp.textContent = Math.round(data.main.temp) + "°C";
     humiPer.textContent = data.main.humidity + "%";
     windPer.textContent = data.wind.speed  +"km/h";
     pressure.textContent = data.main.sea_level;
@@ -40,55 +37,61 @@ async function checkWeather(location){
     if(data.weather[0].main == 'clear'){
         weatherIcon.src = 'assets/images/clear.png';// changing the source of the image
         document.querySelector(".h-w-warp").style.visibility = 'visible';
-        
-        slideUpAnime();
-        fadeUpAnime();
         gradientAnimeOne();
         slideUpAnime();
+        fadeUpAnime();
+        
     }
     if(data.weather[0].main == 'Mist'){
         weatherIcon.src = 'assets/images/mist.png';
         document.querySelector(".h-w-warp").style.visibility = 'visible';
         gradientAnimeOne();
         slideUpAnime();
+        fadeUpAnime();
+       
     }
     else if(data.weather[0].main == 'Clouds'){
         weatherIcon.src = '/assets/images/clouds.png';
         document.querySelector(".h-w-warp").style.visibility = 'visible';
-      
-        slideUpAnime();
-        fadeUpAnime();
         gradientAnimeOne();
         slideUpAnime();
+        fadeUpAnime();
+      
     }
     else if(data.weather[0].main == 'rain'){
         weatherIcon.src = 'assets/images/rain.png';
         document.querySelector(".h-w-warp").style.visibility = 'visible';
-        
-        slideUpAnime();
-        fadeUpAnime();
         gradientAnimeOne();
         slideUpAnime();
+        fadeUpAnime();
+        
     }
     else if(data.weather[0].main == 'Drizzle'){
         weatherIcon.src = 'assets/images/drizzle.png';
         document.querySelector(".h-w-warp").style.visibility = 'visible';
+        slideUpAnime();
+        fadeUpAnime();
     }
     else if(data.weather[0].main == 'Snow'){
         weatherIcon.src = 'assets/images/snow.png';
         document.querySelector(".h-w-warp").style.visibility = 'visible';
         slideUpAnime();
         fadeUpAnime();
-        gradientAnimeOne();
-        slideUpAnime();
     }
     else{
+        weatherIcon.src = '/assets/images/clouds.png';
         document.querySelector(".h-w-warp").style.visibility = 'visible';
-        slideUpAnime();
-        fadeUpAnime();
         gradientAnimeOne();
         slideUpAnime();
+        fadeUpAnime();
     }
+}
+catch{
+        temp.textContent = data.message;
+        document.querySelector(".h-w-warp").style.visibility = 'hidden';
+        weatherIcon.src = 'assets/error.svg';
+        slideUpAnime();
+}
 }
 
 //calling the checkWeather funciton by mouse click 
