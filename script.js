@@ -51,7 +51,7 @@ async function checkWeather(location){
        
     }
     else if(data.weather[0].main == 'Clouds'){
-        weatherIcon.src = '/assets/images/clouds.png';
+        weatherIcon.src = 'assets/images/clouds.png';
         document.querySelector(".h-w-warp").style.visibility = 'visible';
         gradientAnimeOne();
         slideUpAnime();
@@ -79,7 +79,7 @@ async function checkWeather(location){
         fadeUpAnime();
     }
     else{
-        weatherIcon.src = '/assets/images/clouds.png';
+        weatherIcon.src = 'assets/images/clouds.png';
         document.querySelector(".h-w-warp").style.visibility = 'visible';
         gradientAnimeOne();
         slideUpAnime();
