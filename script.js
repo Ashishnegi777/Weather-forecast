@@ -89,31 +89,30 @@ async function checkWeather(location){
 catch{
         temp.textContent = data.message;
         document.querySelector(".h-w-warp").style.visibility = 'hidden';
-        weatherIcon.src = 'assets/error.svg';
+        weatherIcon.src = 'assets/images/error.svg';
         slideUpAnime();
 }
 }
+
+
 
 //calling the checkWeather funciton by mouse click 
 searchBtn.addEventListener('click', ()=>{
     checkWeather(search.value);
     
-});
-
-
-//calling the checkWeather funciton by Enter keypress
+})
+//calling the checkWeather funciton by Enter keypress event
 search.addEventListener('keypress', (event)=>{
     if(event.key === "Enter" )
     checkWeather(search.value);
 });
 
-// adding an regex check if users press any key form a to z it focus on the input field
+// adding an event driven for direct jump to the input field
 document.addEventListener('keydown', function(event){
-    if(/^[a-zA-Z]$/){
-        // event.preventDefault();
+    if(/^[a-zA-Z]$/.test(event.key)){
         input.focus();
     }
-});
+})
 
 // for slide up animation GSAP
 function slideUpAnime(){
@@ -176,3 +175,4 @@ function flipUp(){
     }
     )
 }
+
