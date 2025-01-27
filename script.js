@@ -43,7 +43,7 @@ async function checkWeather(location){
         
     }
     if(data.weather[0].main == 'Mist'){
-        weatherIcon.src = 'assets/images/mist.png';
+        weatherIcon.src = '/assets/images/mist.png';
         document.querySelector(".h-w-warp").style.visibility = 'visible';
         gradientAnimeOne();
         slideUpAnime();
@@ -79,7 +79,7 @@ async function checkWeather(location){
         fadeUpAnime();
     }
     else{
-        weatherIcon.src = 'assets/images/clouds.png';
+        weatherIcon.src = '/assets/images/clouds.png';
         document.querySelector(".h-w-warp").style.visibility = 'visible';
         gradientAnimeOne();
         slideUpAnime();
