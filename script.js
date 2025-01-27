@@ -35,7 +35,7 @@ async function checkWeather(location){
 
     // for differ weather condition icon change
     if(data.weather[0].main == 'clear'){
-        weatherIcon.src = 'assets/images/clear.png';// changing the source of the image
+        weatherIcon.src = './assets/images/clear.png';// changing the source of the image
         document.querySelector(".h-w-warp").style.visibility = 'visible';
         gradientAnimeOne();
         slideUpAnime();
@@ -43,7 +43,7 @@ async function checkWeather(location){
         
     }
     if(data.weather[0].main == 'Mist'){
-        weatherIcon.src = '/assets/images/mist.png';
+        weatherIcon.src = './assets/images/mist.png';
         document.querySelector(".h-w-warp").style.visibility = 'visible';
         gradientAnimeOne();
         slideUpAnime();
@@ -51,7 +51,7 @@ async function checkWeather(location){
        
     }
     else if(data.weather[0].main == 'Clouds'){
-        weatherIcon.src = 'assets/images/clouds.png';
+        weatherIcon.src = './assets/images/clouds.png';
         document.querySelector(".h-w-warp").style.visibility = 'visible';
         gradientAnimeOne();
         slideUpAnime();
@@ -59,7 +59,7 @@ async function checkWeather(location){
       
     }
     else if(data.weather[0].main == 'rain'){
-        weatherIcon.src = 'assets/images/rain.png';
+        weatherIcon.src = './assets/images/rain.png';
         document.querySelector(".h-w-warp").style.visibility = 'visible';
         gradientAnimeOne();
         slideUpAnime();
@@ -73,7 +73,7 @@ async function checkWeather(location){
         fadeUpAnime();
     }
     else if(data.weather[0].main == 'Snow'){
-        weatherIcon.src = 'assets/images/snow.png';
+        weatherIcon.src = './assets/images/snow.png';
         document.querySelector(".h-w-warp").style.visibility = 'visible';
         slideUpAnime();
         fadeUpAnime();
@@ -89,7 +89,7 @@ async function checkWeather(location){
 catch{
         temp.textContent = data.message;
         document.querySelector(".h-w-warp").style.visibility = 'hidden';
-        weatherIcon.src = 'assets/images/error.svg';
+        weatherIcon.src = './assets/images/error.svg';
         slideUpAnime();
 }
 }
