@@ -167,3 +167,10 @@ button>img{
         opacity: 1;
     }
 }
+
+// for mobile screen
+@media screen and (max-width: 800px)  {
+    .main{
+        width: 80%;
+    }
+}
